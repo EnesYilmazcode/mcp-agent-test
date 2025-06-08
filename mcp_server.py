@@ -14,6 +14,9 @@ async def call_tool(request: Request):  # The function is marked as async to han
     args = body.get("args", {})  # getting arguments for the tool, return empty dictionary if not provided
 
 
+    # ** is a shortcut that takes all the values from a dictionary and breaks them into individual arguments
+
+
     if tool == "create_file":
         return {"result": file_tools.create_file(**args)}  # create tool
     elif tool == "read_file":
